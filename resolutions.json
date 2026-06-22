@@ -1,0 +1,35 @@
+{
+  "_comment": "名寄せ衝突の解決ルール（2026-06-11 v1構築時の判断記録）。merges=同一概念の表記ゆれ→正規形へ統合。unlinks=概念が別物なのでsynonymから除去しrelated_termsへ降格（誤名寄せ防止）",
+  "merges": [
+    { "into": "元付", "from": ["元付け"] },
+    { "into": "客付", "from": ["客付け"] },
+    { "into": "物件確認", "from": ["物確"], "_note": "正規形は正式名称、物確は現場語としてsynonymに" },
+    { "into": "手付金", "from": ["手付"] },
+    { "into": "任意売却", "from": ["任売"] },
+    { "into": "買取再販", "from": ["再販"] },
+    { "into": "申込証拠金", "from": ["申込金"] },
+    { "into": "残代金決済", "from": ["決済"] },
+    { "into": "ローン特約", "from": ["住宅ローン特約", "融資特約"], "_note": "重説様式は融資利用に関する事項だが現場最多用例のローン特約を正規形に" },
+    { "into": "登記事項証明書", "from": ["謄本"], "_note": "謄本は旧称・現場語" },
+    { "into": "抵当権抹消登記", "from": ["抵当権抹消"] },
+    { "into": "買付証明書", "from": ["買付"] },
+    { "into": "現況有姿", "from": ["現状有姿売買"] },
+    { "into": "家賃保証会社", "from": ["保証会社"] }
+  ],
+  "unlinks": [
+    { "term": "管理費", "remove_synonym": "共益費", "_note": "区分所有の管理費と賃貸の共益費は別概念" },
+    { "term": "共益費", "remove_synonym": "管理費" },
+    { "term": "心理的瑕疵", "remove_synonym": "事故物件" },
+    { "term": "心理的瑕疵", "remove_synonym": "告知事項" },
+    { "term": "告知事項", "remove_synonym": "事故物件" },
+    { "term": "重要事項説明", "remove_synonym": "IT重説", "_note": "IT重説は実施形態として独立エントリ" },
+    { "term": "内見", "remove_synonym": "案内", "_note": "顧客側行為と営業側行為で別エントリ維持" },
+    { "term": "案内", "remove_synonym": "内見" },
+    { "term": "サブリース", "remove_synonym": "マスターリース", "_note": "転貸とその原契約＝別概念。混同は実務事故のもと" },
+    { "term": "物上げ", "remove_synonym": "仕入れ", "_note": "媒介の物元開拓と買取再販の仕入れは別概念" },
+    { "term": "抵当権", "remove_synonym": "抵当権設定登記", "_note": "権利と登記行為は別" },
+    { "term": "登記事項証明書", "remove_synonym": "登記簿", "_note": "登記簿は帳簿そのもの・証明書とは別概念" },
+    { "term": "稼働率", "remove_synonym": "OCC", "_note": "賃貸稼働率と宿泊OCCは文脈別にエントリ維持" },
+    { "term": "OCC", "remove_synonym": "稼働率" }
+  ]
+}

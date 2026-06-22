@@ -1,0 +1,1011 @@
+{
+  "category": "slang",
+  "entries": [
+    {
+      "term": "千三つ",
+      "reading": "せんみつ",
+      "category": "slang",
+      "synonyms": [
+        "せんみつ",
+        "センミツ",
+        "千みつ",
+        "千三ツ",
+        "千3つ",
+        "千三つ屋"
+      ],
+      "definition_pro": "「千の話のうち本当にまとまるのは三つ」とされる不動産業・土地ブローカーの古くからの俗称・自嘲表現。成約率の低さ、あるいは話の信用ならなさの両方の含意で使われる。",
+      "definition_plain": "「千件の話があっても実際にまとまるのは三件くらい」という意味の、不動産業界の昔からの自虐的な呼び名です。それだけ話が流れやすい商売だということを表しています。",
+      "english": "'three in a thousand' — an old self-deprecating nickname for the real estate brokerage trade, implying very few deals ever close",
+      "legal_source": null,
+      "usage_example": "うちの商売は千三つなんだから、見込み客の追客を切らしたら終わりだよ。",
+      "related_terms": [
+        "追客",
+        "反響",
+        "物上げ"
+      ],
+      "caution": "業界の自嘲・揶揄を含む語であり、顧客の前で使うと業界全体の信頼を損なう印象を与える。顧客向けの説明では使用しない。"
+    },
+    {
+      "term": "てんぷら",
+      "reading": "てんぷら",
+      "category": "slang",
+      "synonyms": [
+        "テンプラ",
+        "天ぷら",
+        "天麩羅",
+        "てんぷら契約",
+        "テンプラ契約",
+        "架空契約",
+        "空契約"
+      ],
+      "definition_pro": "実体のない架空の契約や申込みを成約として計上する不正の隠語。衣（外形）だけで中身がないことに由来する。",
+      "definition_plain": "実際には存在しない契約を、あったことにして成績に計上するごまかしのことです。外側だけで中身がない天ぷらの衣にたとえた言葉です。",
+      "english": "phantom (fake) contract — fraudulently booking a deal that does not actually exist",
+      "legal_source": null,
+      "usage_example": "計上前に重説の実施と手付金の入金まで必ず裏を取れ。てんぷらは一発アウトだ。",
+      "related_terms": [
+        "歩合",
+        "げた",
+        "買付"
+      ],
+      "caution": "架空計上は社内不正にとどまらず、詐欺罪や文書偽造等の刑事責任、宅建業法上の監督処分につながり得る重大行為。冗談めかした隠語だが、容認的な文脈で使用しないこと。"
+    },
+    {
+      "term": "あて物",
+      "reading": "あてぶつ",
+      "category": "slang",
+      "synonyms": [
+        "あて馬",
+        "当て馬",
+        "アテ馬",
+        "当て物",
+        "アテ物",
+        "アテブツ",
+        "あて物件",
+        "当て物件",
+        "あてぶつ"
+      ],
+      "definition_pro": "本命物件を引き立てて成約しやすくするため、比較対象として意図的に先に見せる見劣りのする物件。案内の組み立てで本命の前後に挟む手法を指す。",
+      "definition_plain": "本当におすすめしたい物件をよく見せるために、わざと比較用に見せる「見劣りする物件」のことです。",
+      "english": "decoy property / foil listing — an inferior property shown deliberately to make the target property look better",
+      "legal_source": null,
+      "usage_example": "本命の前にあて物を2件見せて、相場観を作ってから案内に入ろう。",
+      "related_terms": [
+        "案内",
+        "追客",
+        "おとり広告",
+        "新規"
+      ],
+      "caution": "顧客を誤導する営業手法として信頼を損ねやすい。なお「存在しない・取引できない物件を広告する」おとり広告（宅建業法32条の誇大広告等の禁止や公正競争規約で禁止）とは別概念だが、混同されやすいので区別すること。"
+    },
+    {
+      "term": "出し",
+      "reading": "だし",
+      "category": "slang",
+      "synonyms": [
+        "資料出し",
+        "図面出し",
+        "物件出し",
+        "ダシ",
+        "資料だし",
+        "図面だし"
+      ],
+      "definition_pro": "他業者からの資料請求に応じて物件図面・資料を提供すること。提供を渋る「出し渋り」「出し止め」は囲い込みの兆候とされる。",
+      "definition_plain": "不動産会社同士で、物件の資料や図面を渡すことです。「資料を出す」という意味の現場の言い方です。",
+      "english": "sharing listing materials (flyers/spec sheets) with co-brokering agents",
+      "legal_source": null,
+      "usage_example": "客付け業者さんから資料請求が来たら、即出しで対応してください。",
+      "related_terms": [
+        "マイソク",
+        "物確",
+        "囲い込み",
+        "元付け",
+        "客付け"
+      ],
+      "caution": "専任媒介等でレインズに登録した物件について、正当な理由なく資料提供や紹介を拒む運用は囲い込みと評価され得る。出し渋りの指示はコンプライアンス上問題になる。"
+    },
+    {
+      "term": "抜き",
+      "reading": "ぬき",
+      "category": "slang",
+      "synonyms": [
+        "抜き行為",
+        "客抜き",
+        "ヌキ",
+        "抜かれ",
+        "抜き営業"
+      ],
+      "definition_pro": "他社が媒介契約を結んでいる売主や、他社が接客中の顧客に直接アプローチして取引を横取りする行為。業者間の重大なマナー違反とされる。",
+      "definition_plain": "ほかの不動産会社がすでに担当しているお客さんや物件を、横から奪ってしまう行為のことです。",
+      "english": "poaching — taking over another broker's client or listing by approaching them directly",
+      "legal_source": null,
+      "usage_example": "専任で預かっている売主さんに他社が直接営業をかけてきた。完全に抜きだよ。",
+      "related_terms": [
+        "直",
+        "飛ばし",
+        "物上げ",
+        "専任返し"
+      ],
+      "caution": "宅建業法に「抜き行為」の直接の定義規定はないが、依頼者側から見ると、専任媒介・専属専任媒介の契約期間中に他業者へ重ねて依頼する行為は国土交通省の標準媒介契約約款上、違約金や費用償還請求の対象となり得る。"
+    },
+    {
+      "term": "直",
+      "reading": "じか",
+      "category": "slang",
+      "synonyms": [
+        "直取引",
+        "直契約",
+        "ジカ",
+        "直（ちょく）",
+        "売主直",
+        "大家直",
+        "じか取引"
+      ],
+      "definition_pro": "仲介業者を介さずに当事者（売主・貸主）と直接つながっている状態、またはその直接取引。「売主直」「大家直」のように、間に他業者が入っていないことを示す。",
+      "definition_plain": "間にほかの不動産会社をはさまず、持ち主と直接やりとりできる状態のことです。話が早く、条件交渉もしやすくなります。",
+      "english": "direct (deal) — dealing directly with the owner/seller without intermediaries in between",
+      "legal_source": null,
+      "usage_example": "この物件は売主直だから、あんこが入っている案件より話が早い。",
+      "related_terms": [
+        "あんこ",
+        "元付け",
+        "飛ばし",
+        "川上"
+      ],
+      "caution": "媒介契約期間中の依頼者による直接取引（自己発見取引）は、専属専任媒介では標準媒介契約約款上禁止され、違約金の対象となり得る。読みは「じか」と「ちょく」の両方が現場で使われる。"
+    },
+    {
+      "term": "飛ばし",
+      "reading": "とばし",
+      "category": "slang",
+      "synonyms": [
+        "業者飛ばし",
+        "仲介飛ばし",
+        "中抜き",
+        "トバシ",
+        "飛し",
+        "仲介外し"
+      ],
+      "definition_pro": "媒介業者を介して知り合った当事者同士が、仲介手数料を逃れる目的で業者を排除して直接契約すること。業者側が他業者を排除する文脈でも使う。",
+      "definition_plain": "不動産会社の紹介で知り合った売り手と買い手が、仲介手数料を払わずに済ませようと、不動産会社を外して直接契約してしまうことです。",
+      "english": "cutting out the broker — closing a deal directly to avoid paying brokerage fees after being introduced by the broker",
+      "legal_source": null,
+      "usage_example": "案内から交渉まで全部やったのに、買主が売主と飛ばしで契約していた。",
+      "related_terms": [
+        "直",
+        "抜き",
+        "あんこ",
+        "両手"
+      ],
+      "caution": "標準媒介契約約款では、媒介契約の有効期間内や終了後一定期間内に、業者の紹介によって知った相手方と業者を排除して直接契約した場合、業者は契約成立への寄与割合に応じた相当額の報酬を請求できる旨が定められている。金融業界の「飛ばし」（損失隠し）とは全く別の意味なので文脈に注意。"
+    },
+    {
+      "term": "物上げ",
+      "reading": "ぶつあげ",
+      "category": "slang",
+      "synonyms": [
+        "ブツ上げ",
+        "ぶつ上げ",
+        "物あげ",
+        "物上げ営業",
+        "ブツアゲ",
+        "仕入れ",
+        "物件仕入れ",
+        "売り仕入れ"
+      ],
+      "definition_pro": "売主から売却物件情報を仕入れ、媒介契約や買取につなげること。売り側情報の獲得活動全般、およびその専門部隊（物上げ営業）を指す。",
+      "definition_plain": "「売りたい人」を探して、売却の相談や依頼を集めてくる活動のことです。お店に並べる商品（売り物件）を仕入れる仕事にあたります。",
+      "english": "sourcing listings — prospecting for sellers to acquire sell-side mandates or purchase opportunities",
+      "legal_source": null,
+      "usage_example": "今月は反響が少ないから、テレアポで物上げに集中して売り物件を増やそう。",
+      "related_terms": [
+        "源泉営業",
+        "川上",
+        "ネタ",
+        "元付け",
+        "専任返し"
+      ],
+      "caution": "電話・訪問による執拗な売却勧誘は、宅建業法の勧誘規制（威迫の禁止、迷惑な時間帯の電話・訪問の禁止、再勧誘の禁止等）に抵触し得る。"
+    },
+    {
+      "term": "元付け",
+      "reading": "もとづけ",
+      "category": "slang",
+      "synonyms": [
+        "元付",
+        "元付け業者",
+        "元付業者",
+        "物元",
+        "物元業者",
+        "モトヅケ",
+        "ブツモト",
+        "元（もと）"
+      ],
+      "definition_pro": "売主・貸主から直接媒介の依頼を受けている業者。「物元（ぶつもと）」とも呼び、客付け業者と対をなす。",
+      "definition_plain": "売り主や大家さんから直接「売ってください・貸してください」と依頼を受けている不動産会社のことです。",
+      "english": "listing(-side) broker — the agent retained directly by the seller or landlord",
+      "legal_source": null,
+      "usage_example": "この図面の帯は他社さんだから、物確は元付けに直接電話して。",
+      "related_terms": [
+        "客付け",
+        "物元",
+        "マイソク",
+        "物確",
+        "両手",
+        "片手"
+      ],
+      "caution": "売主と媒介契約を結ぶ際は宅建業法34条の2に基づく媒介契約書面の交付（電磁的方法による提供も可）が必要。元付けという呼称自体に法令上の定義はない。"
+    },
+    {
+      "term": "客付け",
+      "reading": "きゃくづけ",
+      "category": "slang",
+      "synonyms": [
+        "客付",
+        "客付け業者",
+        "客付業者",
+        "キャクヅケ",
+        "客づけ"
+      ],
+      "definition_pro": "買主・借主を見つけて取引に付けること、またはその側に立つ業者。派生語の「客付け力」は買手・借手を集めて決める集客・成約能力を指す。",
+      "definition_plain": "「買いたい人・借りたい人」を見つけてくる役割、またはそれを担当する不動産会社のことです。",
+      "english": "buyer/tenant-side brokering — finding and bringing the buyer or tenant to a deal",
+      "legal_source": null,
+      "usage_example": "あの会社は客付け力が強いから、新規物件はまず先に声をかけている。",
+      "related_terms": [
+        "元付け",
+        "客付け力",
+        "反響",
+        "追客",
+        "AD"
+      ],
+      "caution": null
+    },
+    {
+      "term": "追客",
+      "reading": "ついきゃく",
+      "category": "slang",
+      "synonyms": [
+        "追い客",
+        "ツイキャク",
+        "追客活動",
+        "追客メール",
+        "顧客フォロー"
+      ],
+      "definition_pro": "反響や名簿上の見込み客に対し、電話・メール・SMS等で継続的に接触し、来店・案内・成約へつなげる活動。",
+      "definition_plain": "一度問い合わせをくれたお客さんに、その後も連絡を取り続けてフォローすることです。",
+      "english": "lead follow-up — continuously following up with prospective clients to convert them",
+      "legal_source": null,
+      "usage_example": "先週の反響がまだ追客リストに入っていないよ。今日中に一本電話を入れて。",
+      "related_terms": [
+        "反響",
+        "源泉営業",
+        "案内",
+        "千三つ"
+      ],
+      "caution": "深夜の電話や断られた後の執拗な連絡は宅建業法の勧誘規制や個人情報保護の観点で問題になり得る。頻度・時間帯・連絡停止希望の管理を徹底する。"
+    },
+    {
+      "term": "反響",
+      "reading": "はんきょう",
+      "category": "slang",
+      "synonyms": [
+        "反響客",
+        "ハンキョウ",
+        "反響数",
+        "問い合わせ",
+        "問合せ",
+        "ポータル反響"
+      ],
+      "definition_pro": "広告・ポータルサイト・チラシ等を見た顧客からの問い合わせ。反響の獲得・対応から始める営業手法を反響営業と呼ぶ。",
+      "definition_plain": "広告や物件サイトを見たお客さんからの「問い合わせ」のことです。",
+      "english": "inbound inquiry/lead — a customer response generated by advertising or listing portals",
+      "legal_source": null,
+      "usage_example": "ポータルに新規で掲載した途端、反響が10件入った。",
+      "related_terms": [
+        "追客",
+        "源泉営業",
+        "新規",
+        "客付け",
+        "マイソク"
+      ],
+      "caution": "反響獲得目的で成約済み・架空の物件を掲載し続けると、おとり広告として宅建業法32条（誇大広告等の禁止）や公正競争規約違反に問われ得る。掲載物件は物確とステータス管理を徹底する。"
+    },
+    {
+      "term": "源泉営業",
+      "reading": "げんせんえいぎょう",
+      "category": "slang",
+      "synonyms": [
+        "源泉",
+        "ゲンセン",
+        "源泉客",
+        "開拓営業",
+        "源泉開拓"
+      ],
+      "definition_pro": "広告反響に頼らず、テレアポ・飛び込み・紹介などで自ら見込み客や売り物件を開拓する営業手法。反響営業と対をなす。",
+      "definition_plain": "広告からの問い合わせを待つのではなく、電話や訪問などで自分からお客さんを探しに行く営業のやり方です。",
+      "english": "outbound prospecting — generating clients proactively via cold calls and door-knocking rather than waiting for inquiries",
+      "legal_source": null,
+      "usage_example": "うちは反響が少ないから、午前中は源泉営業で地主さんに電話をかけている。",
+      "related_terms": [
+        "反響",
+        "物上げ",
+        "追客",
+        "千三つ"
+      ],
+      "caution": "宅建業法の勧誘規制（勧誘に先立つ社名・目的の告知、再勧誘の禁止、威迫の禁止等）の遵守が前提。違反は監督処分の対象になり得る。"
+    },
+    {
+      "term": "歩合",
+      "reading": "ぶあい",
+      "category": "slang",
+      "synonyms": [
+        "歩合給",
+        "歩合制",
+        "フルコミ",
+        "完全歩合",
+        "インセンティブ",
+        "ブアイ",
+        "歩合率"
+      ],
+      "definition_pro": "成約実績に応じて支払われる報酬。仲介手数料売上の一定割合で計算されることが多く、固定給ゼロの形態は「フルコミ（完全歩合）」と呼ばれる。",
+      "definition_plain": "営業担当者の給料のうち、契約をまとめた実績に応じて増える部分のことです。",
+      "english": "commission-based pay — compensation tied to the broker's closed-deal revenue",
+      "legal_source": null,
+      "usage_example": "あの会社は固定給が低い分、手数料売上の3割が歩合で入るらしい。",
+      "related_terms": [
+        "バック",
+        "てんぷら",
+        "両手",
+        "片手"
+      ],
+      "caution": "雇用契約の場合、完全歩合制でも労働基準法27条（出来高払制の保障給）により一定の賃金保障が必要。顧客から受け取る仲介手数料そのもの（宅建業法46条の報酬規制）と混同しないこと。"
+    },
+    {
+      "term": "バック",
+      "reading": "ばっく",
+      "category": "slang",
+      "synonyms": [
+        "キックバック",
+        "バックマージン",
+        "紹介料",
+        "リベート",
+        "業者バック",
+        "歩戻し"
+      ],
+      "definition_pro": "紹介や成約の見返りに業者間・提携先間で支払われる紹介料・キックバックの俗称。リフォーム会社・金融機関・引越業者等からの還元金を指すことが多い。",
+      "definition_plain": "お客さんを紹介したお礼として、紹介した側の会社が受け取るお金のことです。",
+      "english": "kickback / referral fee — money paid back to the introducing party upon a successful referral",
+      "legal_source": null,
+      "usage_example": "提携リフォーム会社を紹介するとバックが入るが、お客様への開示ルールは守ること。",
+      "related_terms": [
+        "AD",
+        "歩合",
+        "あんこ"
+      ],
+      "caution": "顧客に秘して受け取るキックバックは利益相反として信頼を損なう。また名目を問わず媒介の対価として宅建業法46条の報酬上限を超える金銭を依頼者から受領することは違法。"
+    },
+    {
+      "term": "AD",
+      "reading": "えーでぃー",
+      "category": "slang",
+      "synonyms": [
+        "ＡＤ",
+        "広告料",
+        "広告費",
+        "エーディー",
+        "ad",
+        "AD100",
+        "AD200",
+        "広告料1ヶ月"
+      ],
+      "definition_pro": "賃貸仲介で、貸主・元付け側から客付け業者へ支払われる広告料の通称。「AD100」は賃料1ヶ月分、「AD200」は2ヶ月分を意味する。",
+      "definition_plain": "空室を早く埋めたい大家さん側が、入居者を決めてくれた不動産会社に支払う謝礼金のことです。",
+      "english": "advertising fee (AD) — an incentive fee paid by the landlord side to the tenant-side broker in rental deals",
+      "legal_source": null,
+      "usage_example": "この部屋は決まりにくいから、AD2ヶ月付けて客付けを呼ぼう。",
+      "related_terms": [
+        "客付け",
+        "元付け",
+        "バック",
+        "マイソク"
+      ],
+      "caution": "宅建業者が依頼者から受領できる報酬は宅建業法46条と報酬告示で上限が定められており、「広告料」の名目でも依頼者の依頼に基づく広告の実費以外を受領すると実質的な報酬上限超過として違法と判断され得る（貸主が任意に支払う成功報酬的ADの扱いは実務上の論点）。"
+    },
+    {
+      "term": "専任返し",
+      "reading": "せんにんがえし",
+      "category": "slang",
+      "synonyms": [
+        "専任返",
+        "専任戻し",
+        "せんにんがえし",
+        "専任バック"
+      ],
+      "definition_pro": "仲介業者が買取再販業者に物件を買い取らせる際、その再販売時の媒介（多くは専任媒介）を紹介元の仲介業者に戻す商慣行。買取側が仕入れ協力の見返りに約束することが多い。",
+      "definition_plain": "不動産会社が買取業者に物件を紹介して買い取ってもらう代わりに、その物件を再び売り出すときの販売窓口を紹介元の会社に任せてもらう約束のことです。",
+      "english": "returning the resale listing — granting the (exclusive) resale mandate back to the broker who introduced the acquisition",
+      "legal_source": null,
+      "usage_example": "買い取っていただけるなら、再販のときは御社に専任返ししますよ。",
+      "related_terms": [
+        "再販",
+        "物上げ",
+        "業物",
+        "両手"
+      ],
+      "caution": "業者間の関係維持が優先され、売主（元の所有者）にとって最良の売却方法かどうかの検討がおろそかになり得る。媒介契約の種別と義務（宅建業法34条の2）は通常どおり適用される。"
+    },
+    {
+      "term": "新規",
+      "reading": "しんき",
+      "category": "slang",
+      "synonyms": [
+        "新規物件",
+        "シンキ",
+        "初出し",
+        "初出し物件",
+        "出たて",
+        "新着"
+      ],
+      "definition_pro": "市場に初めて公開された売出し・募集物件。鮮度が高く反響が集まりやすいため、レインズやポータルの新規登録を毎朝確認するのが現場の基本動作。",
+      "definition_plain": "売り出されたばかりの新しい物件情報のことです。出たばかりの物件は人気が集中しやすいです。",
+      "english": "fresh listing — a property newly released to the market",
+      "legal_source": null,
+      "usage_example": "今朝レインズに出た新規、駅5分の角地。すぐ物確して案内枠を押さえて。",
+      "related_terms": [
+        "再販",
+        "物確",
+        "反響",
+        "ネタ",
+        "川上"
+      ],
+      "caution": "「新規」を装った再掲載（一度取り下げた物件の再登録）と区別されることがある。広告上の「新着」表示の濫用は誤認表示として公正競争規約上問題となり得る。"
+    },
+    {
+      "term": "再販",
+      "reading": "さいはん",
+      "category": "slang",
+      "synonyms": [
+        "買取再販",
+        "再販物件",
+        "サイハン",
+        "再販売",
+        "リノベ再販"
+      ],
+      "definition_pro": "主に、宅建業者が物件を買い取り、リフォーム・再生後に売主として再度販売すること（買取再販）。文脈により、一度市場に出た物件の再売出し・再掲載を指すこともある。",
+      "definition_plain": "不動産会社がいったん物件を買い取り、リフォームなどをしてから売り出し直すことです。",
+      "english": "buy-to-resell / flipped property — a property acquired by a dealer, renovated, and resold",
+      "legal_source": null,
+      "usage_example": "この物件は業者の再販だから、リフォーム済みで引渡しも早い。",
+      "related_terms": [
+        "新規",
+        "専任返し",
+        "業物",
+        "物上げ"
+      ],
+      "caution": "宅建業者が自ら売主となる再販では、宅建業法のいわゆる自ら売主制限（クーリング・オフ、手付額の制限、契約不適合責任に関する特約の制限＝宅建業法40条 等）が適用される。2020年民法改正により「瑕疵担保責任」は「契約不適合責任」に改められている点も説明時に注意。"
+    },
+    {
+      "term": "川上",
+      "reading": "かわかみ",
+      "category": "slang",
+      "synonyms": [
+        "川上情報",
+        "川上案件",
+        "上流",
+        "上流情報",
+        "カワカミ"
+      ],
+      "definition_pro": "物件情報の流通経路のうち売主に近い上流側。市場公開前の段階で情報に接触できるポジションや、その段階の情報を指す。",
+      "definition_plain": "物件情報が世の中に出回る前の、売り主に近い段階のことです。早い段階で情報をつかめるほど有利とされます。",
+      "english": "upstream — the early, seller-proximate stage of the property information flow, before public marketing",
+      "legal_source": null,
+      "usage_example": "川上の情報を取りたければ、金融機関や税理士との付き合いを増やすことだ。",
+      "related_terms": [
+        "川下",
+        "物上げ",
+        "ネタ",
+        "直",
+        "元付け"
+      ],
+      "caution": "「川上情報」「未公開」を売り文句にした投資勧誘トークは誇大になりやすい。情報の真偽と取引可能性（媒介権限の有無）の確認が先。"
+    },
+    {
+      "term": "川下",
+      "reading": "かわしも",
+      "category": "slang",
+      "synonyms": [
+        "川下情報",
+        "川下案件",
+        "下流",
+        "下流情報",
+        "カワシモ"
+      ],
+      "definition_pro": "物件情報の流通経路のうち、レインズ登録・ポータル掲載などで広く公開された下流側。多数の業者・顧客が同じ情報を見ている競争段階を指す。",
+      "definition_plain": "物件情報がインターネットなどで広く公開された後の段階のことです。誰もが見られる情報なので、競争が激しくなります。",
+      "english": "downstream — the late stage where property information is publicly listed and widely circulated",
+      "legal_source": null,
+      "usage_example": "ポータルに出てから動くのは川下の戦いで、どうしても価格勝負になりがちだ。",
+      "related_terms": [
+        "川上",
+        "反響",
+        "新規",
+        "客付け"
+      ],
+      "caution": null
+    },
+    {
+      "term": "火消し",
+      "reading": "ひけし",
+      "category": "slang",
+      "synonyms": [
+        "火消し対応",
+        "ヒケシ",
+        "クレーム処理",
+        "鎮火"
+      ],
+      "definition_pro": "契約トラブル・クレーム・悪い噂などが拡大する前に収束させる対応。引渡し後の不具合対応や近隣トラブルの初動を指すことが多い。",
+      "definition_plain": "お客さまからの苦情やトラブルが大きくなる前に、急いで対応しておさめることです。",
+      "english": "damage control / firefighting — containing a complaint or dispute before it escalates",
+      "legal_source": null,
+      "usage_example": "引渡し後に雨漏りのクレームが入った。まず現地を見て火消しに行ってくる。",
+      "related_terms": [
+        "契約不適合責任",
+        "告知事項",
+        "物確"
+      ],
+      "caution": "「火消し」目的で不具合や事故歴などの事実を隠すと、告知義務違反・契約不適合責任（2020年民法改正後の用語。旧・瑕疵担保責任）の問題に発展し、かえって損害を拡大させる。"
+    },
+    {
+      "term": "げた",
+      "reading": "げた",
+      "category": "slang",
+      "synonyms": [
+        "下駄",
+        "ゲタ",
+        "下駄を履かせる",
+        "げたを履かせる",
+        "下駄履かせ",
+        "上乗せ"
+      ],
+      "definition_pro": "査定額・売出価格・実績数字などに実態以上の上乗せをすること。「下駄を履かせる」の形で使い、媒介獲得目的の高値査定を指すことが多い。",
+      "definition_plain": "本当の評価より高く見せるために、数字を上乗せすることです。たとえば売れる見込みより高い査定額を出すことを指します。",
+      "english": "padding / inflating figures — quoting a higher-than-realistic valuation or number ('putting on geta clogs')",
+      "legal_source": null,
+      "usage_example": "査定にげたを履かせて専任を取っても、結局あとの値下げ交渉で苦しむだけだ。",
+      "related_terms": [
+        "物上げ",
+        "囲い込み",
+        "てんぷら",
+        "指値"
+      ],
+      "caution": "媒介獲得目的の根拠のない高値査定は依頼者の判断を誤らせる。広告で実態より著しく優良・有利と誤認させる表示は宅建業法32条（誇大広告等の禁止）に抵触し得る。"
+    },
+    {
+      "term": "ネタ",
+      "reading": "ねた",
+      "category": "slang",
+      "synonyms": [
+        "物件ネタ",
+        "ねた",
+        "ネタ元",
+        "タマ",
+        "玉",
+        "売りネタ",
+        "買いネタ"
+      ],
+      "definition_pro": "物件情報、特にまだ広く出回っていない売り情報・仕入れ情報を指す隠語。「タマ（玉）」も同義で使われる。情報の出どころは「ネタ元」と呼ぶ。",
+      "definition_plain": "物件の情報のことを指す業界の隠語です。特に、まだ表に出ていない物件情報を指すことが多いです。",
+      "english": "deal lead — insider shorthand for property information, especially not-yet-public listings",
+      "legal_source": null,
+      "usage_example": "いいネタが入ったんだけど、買取できる業者さんを紹介してくれない？",
+      "related_terms": [
+        "川上",
+        "物上げ",
+        "新規",
+        "業物",
+        "出し"
+      ],
+      "caution": "カジュアルな隠語であり、顧客の前で物件を「ネタ」と呼ぶのは不適切。情報源の権限（売主の売却意思・媒介権限）が未確認の「ネタ」を拡散しない。"
+    },
+    {
+      "term": "物確",
+      "reading": "ぶっかく",
+      "category": "slang",
+      "synonyms": [
+        "物件確認",
+        "ブツ確",
+        "ぶつかく",
+        "物確電話",
+        "空き確認",
+        "空確",
+        "ブッカク"
+      ],
+      "definition_pro": "広告掲載や顧客紹介の前に、元付け業者へ物件の現況（販売・募集中か、商談中か、成約済みか）を確認する行為。主に業者間の電話で行う。",
+      "definition_plain": "広告に出ている物件が、今もまだ買える・借りられる状態かどうかを、不動産会社同士で確認することです。",
+      "english": "availability check — calling the listing broker to confirm a property's current status before advertising or introducing it",
+      "legal_source": null,
+      "usage_example": "広告掲載前に必ず物確を入れて、商談中になっていないか確認して。",
+      "related_terms": [
+        "元付け",
+        "出し",
+        "囲い込み",
+        "新規",
+        "マイソク"
+      ],
+      "caution": "2025年1月からレインズで専任媒介・専属専任媒介物件の取引状況（ステータス：公開中／書面による購入申込みあり／売主都合で一時紹介停止）の登録が義務化され、画面上で状況確認がしやすくなったが、最終確認は元付けへの物確電話が実務慣行として残る。"
+    },
+    {
+      "term": "先物",
+      "reading": "さきもの",
+      "category": "slang",
+      "synonyms": [
+        "先物物件",
+        "他社物",
+        "他社物件",
+        "サキモノ",
+        "先物業者"
+      ],
+      "definition_pro": "客付け業者から見て、他社が元付けとなっている物件。自社で媒介を預かる「自社物」と対比して使う。",
+      "definition_plain": "自分の会社ではなく、よその不動産会社が窓口になっている物件のことです。どの会社からでも紹介してもらえることが多いです。",
+      "english": "another broker's listing — a property whose listing mandate is held by a different brokerage",
+      "legal_source": null,
+      "usage_example": "うちは自社物が少ないから、今日は先物中心に案内を組もう。",
+      "related_terms": [
+        "元付け",
+        "客付け",
+        "物確",
+        "マイソク",
+        "片手"
+      ],
+      "caution": "金融の「先物取引」とは無関係。先物を広告掲載する場合は元付け（依頼者）の承諾が必要で、無断掲載や成約済み放置はおとり広告と判断されるリスクがある。"
+    },
+    {
+      "term": "囲い込み",
+      "reading": "かこいこみ",
+      "category": "slang",
+      "synonyms": [
+        "物件囲い込み",
+        "囲込み",
+        "囲いこみ",
+        "カコイコミ",
+        "かこい込み"
+      ],
+      "definition_pro": "元付け業者が両手仲介を狙い、他社からの物確や紹介依頼に「商談中」等と偽って客付けを拒み、物件情報を自社に抱え込む行為。",
+      "definition_plain": "売却を任された不動産会社が、自社で買い手も見つけて両方から手数料を得るために、ほかの会社からの紹介をわざと断ってしまう行為です。売り主にとっては売れる機会が減る不利益になります。",
+      "english": "listing lock-in — a listing broker blocking other brokers' buyers to monopolize both sides of the commission",
+      "legal_source": null,
+      "usage_example": "物確したら「商談中」と言われたのに、ポータルでは公開中のまま。囲い込みかもしれない。",
+      "related_terms": [
+        "両手",
+        "物確",
+        "出し",
+        "レインズ",
+        "元付け"
+      ],
+      "caution": "専任媒介・専属専任媒介では宅建業法34条の2に基づく指定流通機構（レインズ）への登録義務があり、2025年1月からは取引状況（ステータス）の正確な登録が義務化された。虚偽の取引状況登録や意図的な紹介拒否は監督処分（指示処分等）の対象になり得る。"
+    },
+    {
+      "term": "両手",
+      "reading": "りょうて",
+      "category": "slang",
+      "synonyms": [
+        "両手仲介",
+        "両手取引",
+        "両手数料",
+        "リョウテ",
+        "両手取り"
+      ],
+      "definition_pro": "1つの取引で売主・買主（貸主・借主）双方の媒介を行い、双方から仲介手数料を受領する形態の俗称。",
+      "definition_plain": "1つの取引で、売る側と買う側の両方を同じ不動産会社が担当し、両方から手数料を受け取る形のことです。",
+      "english": "dual-agency commission — earning fees from both the seller and the buyer in the same transaction",
+      "legal_source": null,
+      "usage_example": "この案件は自社で買主も見つけたから両手だ。その分、売主への報告は正確にやろう。",
+      "related_terms": [
+        "片手",
+        "囲い込み",
+        "元付け",
+        "客付け"
+      ],
+      "caution": "両手仲介自体は適法だが（受領額はそれぞれ宅建業法46条の報酬上限内）、両手を狙う動機が囲い込みにつながりやすい点が構造的な利益相反として批判される。"
+    },
+    {
+      "term": "片手",
+      "reading": "かたて",
+      "category": "slang",
+      "synonyms": [
+        "片手仲介",
+        "片手取引",
+        "片手数料",
+        "カタテ",
+        "分かれ",
+        "わかれ",
+        "手数料分かれ"
+      ],
+      "definition_pro": "売主・買主のどちらか一方からのみ仲介手数料を受領する形態の俗称。業者間では報酬を元付け・客付けで分け合う意味で「分かれ」とも言う。",
+      "definition_plain": "売る側と買う側を別々の不動産会社が担当し、それぞれ自分のお客さんからだけ手数料を受け取る形のことです。",
+      "english": "single-side commission ('split deal') — each broker collects a fee only from its own client",
+      "legal_source": null,
+      "usage_example": "手数料は分かれ、つまりこちらは片手でお願いします。",
+      "related_terms": [
+        "両手",
+        "元付け",
+        "客付け",
+        "先物",
+        "AD"
+      ],
+      "caution": "業者間電話で「手数料は？」「分かれです」というやり取りは片手配分の意味。「分かれ」を顧客向け説明でそのまま使わないこと。"
+    },
+    {
+      "term": "あんこ",
+      "reading": "あんこ",
+      "category": "slang",
+      "synonyms": [
+        "アンコ",
+        "餡子",
+        "あんこ業者",
+        "中間業者",
+        "間業者"
+      ],
+      "definition_pro": "元付けと客付けの間に介在する中間業者。複数業者が連なる取引で両端以外の業者を指し、饅頭の餡（中身）にたとえた語。あんこが入るほど情報伝達が遅れ、報酬配分も複雑になる。",
+      "definition_plain": "売り主側の会社と買い主側の会社の間に、さらに別の不動産会社がはさまっている状態の、その真ん中の会社のことです。間に入る会社が多いほど話が伝わりにくくなります。",
+      "english": "middle broker — an intermediary brokerage sandwiched between the listing and buyer-side brokers in a daisy-chained deal",
+      "legal_source": null,
+      "usage_example": "売主側と買主側の間にあんこが2社も入っていて、条件交渉が全然進まない。",
+      "related_terms": [
+        "元付け",
+        "客付け",
+        "直",
+        "バック",
+        "川下"
+      ],
+      "caution": "あんこ業者が報酬を受領するには宅建業免許と媒介への実質的関与が前提。実体のない中間介在で報酬だけ抜く形は報酬規制・コンプライアンス上問題となる。"
+    },
+    {
+      "term": "指値",
+      "reading": "さしね",
+      "category": "slang",
+      "synonyms": [
+        "指し値",
+        "サシネ",
+        "指値交渉",
+        "さし値"
+      ],
+      "definition_pro": "買主が売出価格より低い希望購入価格を提示すること、またはその価格。「指値を入れる」「指値が通る」のように使う。投資物件売買で特に多用される。",
+      "definition_plain": "「この金額なら買います」と、売り出し価格より安い希望額を売り主に伝えることです。",
+      "english": "price offer below asking — naming one's own (lower) purchase price to the seller",
+      "legal_source": null,
+      "usage_example": "買主さんは3,480万円に対して200万円の指値を入れたいそうです。",
+      "related_terms": [
+        "買付",
+        "満額",
+        "げた",
+        "任売"
+      ],
+      "caution": "株式の指値注文と語源は同じだが意味合いは異なる。指値が通る保証はなく、根拠のない大幅指値の連発は売主・元付けとの信頼を損なう。"
+    },
+    {
+      "term": "買付",
+      "reading": "かいつけ",
+      "category": "slang",
+      "synonyms": [
+        "買付証明",
+        "買付証明書",
+        "買い付け",
+        "買付け",
+        "カイツケ",
+        "購入申込書",
+        "買付申込"
+      ],
+      "definition_pro": "購入希望者が購入意思と希望条件を書面で示す「買付証明書（購入申込書）」、またはそれを提出する行為の略。提出順で「一番手」「二番手」と呼ぶ商慣行がある。",
+      "definition_plain": "「この物件をこの条件で買いたいです」という意思を売り主に伝えるための申込書のことです。正式な契約の前の段階のものです。",
+      "english": "purchase offer (letter of intent to buy) — a written, pre-contract statement of intent and proposed terms",
+      "legal_source": null,
+      "usage_example": "内見の翌日に一番手の買付が入ったので、売主さんに条件を確認します。",
+      "related_terms": [
+        "指値",
+        "満額",
+        "新規",
+        "物確",
+        "てんぷら"
+      ],
+      "caution": "買付証明書は原則として法的拘束力を持たない（契約は売買契約締結時に成立）が、交渉が熟した段階での不誠実な撤回が損害賠償の問題となった裁判例もある。「一番手優先」は商慣行であり法的なルールではない。"
+    },
+    {
+      "term": "マイソク",
+      "reading": "まいそく",
+      "category": "slang",
+      "synonyms": [
+        "まいそく",
+        "販売図面",
+        "物件図面",
+        "募集図面",
+        "図面",
+        "物件資料",
+        "マイ速"
+      ],
+      "definition_pro": "物件概要・間取り図・帯（取扱業者欄）をまとめた販売図面・募集図面の業界通称。由来は図面配信サービス会社（毎日速報センター）の名称とされる。",
+      "definition_plain": "物件の間取りや価格、特徴を1枚にまとめた紹介シートのことです。不動産会社が物件案内に使う基本資料です。",
+      "english": "property flyer / spec sheet — the standard one-page listing sheet with floor plan, terms, and broker strip",
+      "legal_source": null,
+      "usage_example": "新規で預かった物件のマイソク、今日中に作ってレインズに図面登録して。",
+      "related_terms": [
+        "出し",
+        "帯替え",
+        "元付け",
+        "物確",
+        "レインズ"
+      ],
+      "caution": "帯（業者情報欄）を自社のものに差し替える「帯替え」は広く行われる商慣行だが、元付けの承諾なく他社作成図面を流用・改変して広告掲載すると、無断広告・誤記載の責任問題につながる。"
+    },
+    {
+      "term": "業物",
+      "reading": "ぎょうぶつ",
+      "category": "slang",
+      "synonyms": [
+        "ギョウブツ",
+        "業者物件",
+        "業販物件",
+        "業者間物件",
+        "業物件"
+      ],
+      "definition_pro": "宅建業者が売主の物件、または業者間流通の段階にあり一般公開前の物件情報。エンド（一般消費者）向けに公開された物件と対比して使う。",
+      "definition_plain": "不動産会社が持ち主になっている物件や、まだ業者同士の間だけでやり取りされている物件情報のことです。",
+      "english": "dealer/trade listing — a property owned by a licensed dealer or circulating only within the broker-to-broker market",
+      "legal_source": null,
+      "usage_example": "この情報はまだ業物だから、エンドのお客様には出せない。",
+      "related_terms": [
+        "再販",
+        "エンド",
+        "川上",
+        "ネタ",
+        "専任返し"
+      ],
+      "caution": "宅建業者が自ら売主となって一般消費者に販売する場合は、宅建業法の自ら売主制限（クーリング・オフ、手付額の制限、契約不適合責任の特約制限等）が適用される。業者間売買ではこれらの多くが適用されない点が実務上の違い。"
+    },
+    {
+      "term": "任売",
+      "reading": "にんばい",
+      "category": "slang",
+      "synonyms": [
+        "任意売却",
+        "任売物件",
+        "ニンバイ",
+        "任売り",
+        "ニン売"
+      ],
+      "definition_pro": "任意売却の略。住宅ローン等の返済が困難になった所有者が、債権者（抵当権者）の同意を得て、競売によらず市場で担保物件を売却すること。",
+      "definition_plain": "住宅ローンが払えなくなったときに、裁判所による強制的な売却（競売）にかけられる前に、お金を貸している金融機関の了解を得て普通の方法で家を売ることです。",
+      "english": "voluntary sale (pre-foreclosure sale) — selling a mortgaged property on the open market with lender consent instead of court auction",
+      "legal_source": null,
+      "usage_example": "この案件は任売だから、先に債権者の同意価格を確認しないと進められない。",
+      "related_terms": [
+        "指値",
+        "競売",
+        "物上げ",
+        "川上"
+      ],
+      "caution": "「任意売却」自体に法令上の定義はなく、債権者の同意・抵当権抹消の段取りが取引成立の前提となる。所有者の窮状につけ込む手口の悪質業者も存在する分野のため、顧客説明では競売との比較を含め慎重に。"
+    },
+    {
+      "term": "エンド",
+      "reading": "えんど",
+      "category": "slang",
+      "synonyms": [
+        "エンドユーザー",
+        "エンド客",
+        "エンドさん",
+        "一般客",
+        "エンド向け"
+      ],
+      "definition_pro": "業者間取引における「業者」と対比して、最終消費者である一般顧客（個人の買主・借主・売主）を指す現場語。「エンド向け」「エンド価格」のように使う。",
+      "definition_plain": "不動産会社ではない、ふつうの個人のお客さんのことです。業者どうしの取引と区別するための言い方です。",
+      "english": "end user / retail customer — an ordinary consumer client, as opposed to a real estate professional",
+      "legal_source": null,
+      "usage_example": "この価格は業者間価格だから、エンドに出すときは再販価格に直して。",
+      "related_terms": [
+        "業物",
+        "再販",
+        "川下",
+        "客付け"
+      ],
+      "caution": "顧客本人の前で「エンド」と呼ぶのは失礼にあたるため社内・業者間のみで使う。宅建業者が自ら売主となってエンド（一般消費者）に売る場合は宅建業法の自ら売主制限が適用され、業者間取引と扱いが異なる。"
+    },
+    {
+      "term": "帯替え",
+      "reading": "おびがえ",
+      "category": "slang",
+      "synonyms": [
+        "帯替",
+        "帯変え",
+        "帯チェンジ",
+        "オビガエ",
+        "帯の巻き替え"
+      ],
+      "definition_pro": "他社作成の販売図面（マイソク）下部の取扱業者欄（帯）を自社の社名・連絡先に差し替えて顧客提示や広告に使うこと。客付け実務で広く行われる慣行。",
+      "definition_plain": "物件紹介シートの下にある不動産会社の連絡先欄を、自分の会社のものに貼り替えることです。お客さんからの問い合わせを自社で受けるために行われます。",
+      "english": "swapping the broker strip — replacing the broker info band on another firm's property flyer with one's own",
+      "legal_source": null,
+      "usage_example": "先物を案内するから、元付けに掲載承諾をもらってマイソクを帯替えしておいて。",
+      "related_terms": [
+        "マイソク",
+        "先物",
+        "元付け",
+        "客付け",
+        "出し"
+      ],
+      "caution": "広告掲載には依頼者（元付け・売主）側の承諾が必要で、無断の帯替え掲載や図面内容の改変は無断広告・誤記載・著作権上の責任問題になり得る。成約済み物件の帯替え図面を掲載し続けるとおとり広告と判断されるおそれもある。"
+    },
+    {
+      "term": "満額",
+      "reading": "まんがく",
+      "category": "slang",
+      "synonyms": [
+        "満額買付",
+        "満額申込",
+        "満額回答",
+        "マンガク"
+      ],
+      "definition_pro": "売出価格どおり、値引きなしの金額で買付（購入申込み）が入ること、またはその金額。「満額で買付が入った」のように使い、指値と対をなす。",
+      "definition_plain": "値引きの交渉をせずに、売り出し中の価格そのままで「買います」と申し込むことです。",
+      "english": "full-price offer — a purchase offer at the asking price with no discount",
+      "legal_source": null,
+      "usage_example": "人気エリアの新規だったので、初日の案内で満額の買付が入った。",
+      "related_terms": [
+        "指値",
+        "買付",
+        "新規",
+        "両手"
+      ],
+      "caution": "満額の買付でも契約成立ではなく（契約は売買契約締結時に成立）、売主が引渡時期・ローン特約の有無など他の条件を優先して別の買付を選ぶこともある。"
+    },
+    {
+      "term": "案内",
+      "reading": "あんない",
+      "category": "slang",
+      "synonyms": [
+        "物件案内",
+        "現地案内",
+        "ご案内",
+        "案内を組む"
+      ],
+      "definition_pro": "見込み客を物件に連れて行き内見させる営業活動。来店→案内→買付→契約という営業フローの中核工程で、「案内を組む」「案内が入る」のように使う。",
+      "definition_plain": "不動産会社の担当者がお客さんを物件まで連れて行き、実際に中を見てもらうことです。",
+      "english": "property showing — taking a prospective client to view a property",
+      "legal_source": null,
+      "usage_example": "土曜の午後に3件の案内を組んだので、回る順番と鍵の手配を確認しておいて。",
+      "related_terms": [
+        "追客",
+        "反響",
+        "あて物",
+        "買付",
+        "物確"
+      ],
+      "caution": null
+    },
+    {
+      "term": "レインズ",
+      "reading": "れいんず",
+      "category": "slang",
+      "synonyms": [
+        "REINS",
+        "指定流通機構",
+        "流通機構",
+        "レインズ登録"
+      ],
+      "definition_pro": "国土交通大臣指定の指定流通機構が運営する業者間の物件情報ネットワークシステム（Real Estate Information Network System）の通称。専任媒介・専属専任媒介では所定期間内の物件登録が宅建業法上義務付けられている。",
+      "definition_plain": "不動産会社だけが使える、物件情報を登録・検索する全国的なネットワークのことです。売却を正式に任された物件は、ここに登録するルールになっています。",
+      "english": "REINS (Real Estate Information Network System) — the broker-only listing network operated by government-designated bodies",
+      "legal_source": null,
+      "usage_example": "専任で預かったら、期限内にレインズへ登録して、登録証明書を売主さんに渡してください。",
+      "related_terms": [
+        "囲い込み",
+        "物確",
+        "元付け",
+        "新規",
+        "出し"
+      ],
+      "caution": "「レインズ」は通称であり法令上の用語ではない（法令上は宅建業法34条の2に基づく「指定流通機構」への登録義務として規定）。登録期限は専任媒介7日以内・専属専任媒介5日以内（いずれも休業日を除く）とされる。2025年1月からは取引状況（ステータス）の登録が義務化され、虚偽登録は囲い込みとして監督処分の対象になり得る。"
+    }
+  ]
+}

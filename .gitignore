@@ -1,0 +1,10 @@
+__pycache__/
+.DS_Store
+out/
+outputs/
+tmp/
+*.pyc
+
+# 内部 dev 成果物（公開しない）: ループ用ルーブリックと公開可否監査スクリプト
+criteria.md
+publish_audit.sh
