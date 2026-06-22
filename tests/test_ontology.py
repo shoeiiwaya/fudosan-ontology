@@ -116,6 +116,18 @@ class TestConditionTags(unittest.TestCase):  # MT-033
         self.assertIn("ペット不可", c["tags"])
         self.assertNotIn("ペット可", c["tags"])
 
+    def test_facilities_in_property(self):
+        # ドッグフード発見: 物件文の物理設備（駐車場/オートロック等）を property で抽出する
+        f = O.tag_facilities("駐車場あり、オートロック、宅配ボックス、独立洗面台、システムキッチン、追い焚き")
+        for t in ("駐車場", "オートロック", "宅配ボックス", "独立洗面台", "システムキッチン", "追焚き"):
+            self.assertIn(t, f)
+        st = O.process([{"row_id": "P", "kind": "property",
+                         "text": "南東向き、ペット相談可、駐車場あり、オートロック"}], O.load_ontology())
+        ct = st["conditions"][0]["condition_tags"]
+        self.assertIn("駐車場", ct)
+        self.assertIn("オートロック", ct)
+        self.assertIn("ペット可", ct)
+
 
 class TestNormalizeAttrs(unittest.TestCase):  # MT-068
     def test_tsubo_to_sqm(self):

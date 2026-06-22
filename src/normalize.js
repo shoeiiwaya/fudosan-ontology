@@ -156,6 +156,33 @@ function tagConditions(text) {
   return { tags: [...new Set(tags)].sort(), needs_confirm: needsConfirm };
 }
 
+// 物件/広告の物理設備（可否とは別軸）
+const FACILITY_TAGS = {
+  "駐車場": ["駐車場", "車庫", "ガレージ", "駐車スペース", "parking"],
+  "オートロック": ["オートロック", "autolock"],
+  "宅配ボックス": ["宅配ボックス", "宅配box", "宅配ロッカー"],
+  "エレベーター": ["エレベーター", "エレベータ"],
+  "独立洗面台": ["独立洗面台", "独立洗面", "洗面所独立"],
+  "室内洗濯機置場": ["室内洗濯機置場", "室内洗濯機", "洗濯機置場"],
+  "バス・トイレ別": ["バストイレ別", "風呂トイレ別", "BT別", "セパレート"],
+  "都市ガス": ["都市ガス"],
+  "床暖房": ["床暖房", "床暖"],
+  "浴室乾燥機": ["浴室乾燥機", "浴室乾燥"],
+  "システムキッチン": ["システムキッチン"],
+  "食洗機": ["食洗機", "食器洗い乾燥機", "食器洗浄機"],
+  "追焚き": ["追焚", "追い焚き"],
+  "角部屋": ["角部屋", "角住戸"],
+  "最上階": ["最上階"],
+};
+
+function tagFacilities(text) {
+  const nk = normKey(text);
+  const tags = Object.entries(FACILITY_TAGS)
+    .filter(([, aliases]) => aliases.some((a) => nk.includes(normKey(a))))
+    .map(([t]) => t);
+  return [...new Set(tags)].sort();
+}
+
 // ---- MT-068 面積・築年・方位 ----
 const TSUBO_TO_SQM = 3.305785;
 const JO_SQM = 1.62;
@@ -283,11 +310,13 @@ function process(rows, thisYear = 2026) {
       addAudit("requirement_tagging", rid, "OK", { tag_count: res.tags.length });
     } else if (kind === "property" || kind === "advert") {
       const cres = tagConditions(text);
+      const fres = tagFacilities(text);
       const ares = normalizeAttrs(text, thisYear);
-      conditions.push({ row_id: rid, kind, condition_tags: cres.tags.join(" / "), needs_confirm: cres.needs_confirm.join(" | ") });
+      const condTags = [...new Set([...cres.tags, ...fres])].sort();
+      conditions.push({ row_id: rid, kind, condition_tags: condTags.join(" / "), needs_confirm: cres.needs_confirm.join(" | ") });
       attrs.push({ row_id: rid, kind, attrs: pyDumps(ares.attrs), notes: ares.notes.join("; ") });
       const gate = cres.needs_confirm.length ? "Approval" : "OK";
-      addAudit("condition_attr_tagging", rid, gate, { condition_count: cres.tags.length });
+      addAudit("condition_attr_tagging", rid, gate, { condition_count: condTags.length });
       for (const c of cres.needs_confirm) holds.push(`[${rid}] ${c}`);
     } else if (kind === "term") {
       const props = proposeNewTerms(text);

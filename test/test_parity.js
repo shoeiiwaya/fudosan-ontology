@@ -23,6 +23,7 @@ const INPUTS = [
   { row_id: "R2", kind: "requirement", text: "バス・トイレ別 オートロック 宅配ボックス 南向き 独立洗面台 1Kでも可" },
   { row_id: "P1", kind: "property", text: "専有48.6㎡、平成20年築、南東向き、ペット相談可、民泊相談可、オートロック" },
   { row_id: "P2", kind: "property", text: "25坪 築15年 北西向き 楽器不可 事務所利用可" },
+  { row_id: "P3", kind: "property", text: "駐車場あり、オートロック、宅配ボックス、独立洗面台、床暖房、追い焚き、角部屋、最上階、システムキッチン、食器洗い乾燥機、ペット相談可、民泊相談可" },
   { row_id: "T1", kind: "term", text: "三為で取得した物件、ナゾノゴをフガフガする、特約を確認" },
   { row_id: "X1", kind: "foobar", text: "未知の種別" },
 ];

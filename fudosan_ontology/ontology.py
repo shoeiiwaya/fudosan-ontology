@@ -316,6 +316,34 @@ def tag_conditions(text):
     return {"tags": sorted(set(tags)), "needs_confirm": needs_confirm}
 
 
+# 物件/広告に現れる物理設備の有無（可否条件とは別軸）。物確メモの設備取りこぼし対策。
+FACILITY_TAGS = {
+    "駐車場": ["駐車場", "車庫", "ガレージ", "駐車スペース", "parking"],
+    "オートロック": ["オートロック", "autolock"],
+    "宅配ボックス": ["宅配ボックス", "宅配box", "宅配ロッカー"],
+    "エレベーター": ["エレベーター", "エレベータ"],
+    "独立洗面台": ["独立洗面台", "独立洗面", "洗面所独立"],
+    "室内洗濯機置場": ["室内洗濯機置場", "室内洗濯機", "洗濯機置場"],
+    "バス・トイレ別": ["バストイレ別", "風呂トイレ別", "BT別", "セパレート"],
+    "都市ガス": ["都市ガス"],
+    "床暖房": ["床暖房", "床暖"],
+    "浴室乾燥機": ["浴室乾燥機", "浴室乾燥"],
+    "システムキッチン": ["システムキッチン"],
+    "食洗機": ["食洗機", "食器洗い乾燥機", "食器洗浄機"],
+    "追焚き": ["追焚", "追い焚き"],
+    "角部屋": ["角部屋", "角住戸"],
+    "最上階": ["最上階"],
+}
+
+
+def tag_facilities(text):
+    """物件/広告文 → 物理設備の有無タグ（語彙照合）。可否(CONDITION_RULES)とは別軸。"""
+    nk = norm_key(text)
+    tags = [tag for tag, aliases in FACILITY_TAGS.items()
+            if any(norm_key(a) in nk for a in aliases)]
+    return sorted(set(tags))
+
+
 # ====================================================================
 # MT-068 面積・築年・方位の表記統一
 # ====================================================================
@@ -601,16 +629,18 @@ def process(rows, onto, this_year=2026):
 
         elif kind in ("property", "advert"):
             cres = tag_conditions(text)
+            fres = tag_facilities(text)
             ares = normalize_attrs(text, this_year=this_year)
+            cond_tags = sorted(set(cres["tags"]) | set(fres))
             conditions.append({"row_id": rid, "kind": kind,
-                               "condition_tags": " / ".join(cres["tags"]),
+                               "condition_tags": " / ".join(cond_tags),
                                "needs_confirm": " | ".join(cres["needs_confirm"])})
             attrs.append({"row_id": rid, "kind": kind,
                           "attrs": json.dumps(ares["attrs"], ensure_ascii=False),
                           "notes": "; ".join(ares["notes"])})
             gate = "Approval" if cres["needs_confirm"] else "OK"
             add_audit("condition_attr_tagging", rid, gate,
-                      condition_count=len(cres["tags"]))
+                      condition_count=len(cond_tags))
             for c in cres["needs_confirm"]:
                 holds.append(f"[{rid}] {c}")
 
