@@ -134,7 +134,7 @@ def write_outputs(merged, collisions):
         "entries": merged,
         "collisions_pending": collisions,
     }
-    (ROOT / "ontology.json").write_text(
+    (ROOT / "fudosan_ontology" / "ontology.json").write_text(
         json.dumps(out, ensure_ascii=False, indent=1), encoding="utf-8")
 
     lines = ["# 不動産 業界用語・名寄せオントロジー v1", "",
@@ -162,12 +162,28 @@ def write_outputs(merged, collisions):
     (ROOT / "ontology.md").write_text("\n".join(lines), encoding="utf-8")
 
 
+def sync_node_data():
+    """Node パッケージ用 data/ を辞書と同期（辞書コピー + Python と同一規則の alias 索引）。"""
+    import shutil
+    data_dir = ROOT / "data"
+    data_dir.mkdir(exist_ok=True)
+    shutil.copy(ROOT / "fudosan_ontology" / "ontology.json", data_dir / "ontology.json")
+    if str(ROOT) not in sys.path:
+        sys.path.insert(0, str(ROOT))
+    from fudosan_ontology import ontology as O
+    onto = O.load_ontology()
+    (data_dir / "alias_index.json").write_text(
+        json.dumps(onto["alias_to_term"], ensure_ascii=False, separators=(",", ":")),
+        encoding="utf-8")
+
+
 def main():
     entries = load_entries()
     merged = merge(entries)
     merged = apply_resolutions(merged)
     collisions = find_collisions(merged)
     write_outputs(merged, collisions)
+    sync_node_data()
     per_cat = {}
     for e in merged:
         per_cat[e["category"]] = per_cat.get(e["category"], 0) + 1

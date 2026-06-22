@@ -18,12 +18,15 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-if str(ROOT) not in sys.path:
-    sys.path.insert(0, str(ROOT))
-import ontology as O  # noqa: E402
+try:
+    from . import ontology as O
+except ImportError:  # 直接スクリプト実行時のフォールバック
+    if str(ROOT) not in sys.path:
+        sys.path.insert(0, str(ROOT))
+    import ontology as O  # noqa: E402
 
 PROTOCOL_VERSION = "2024-11-05"
-SERVER_INFO = {"name": "fudosan-ontology", "version": "1.0.0"}
+SERVER_INFO = {"name": "fudosan-ontology", "version": "0.1.0"}
 
 # 災害/ハザード語彙の判定キーワード（chousa ドメイン中心に分布）。
 HAZARD_KEYWORDS = (

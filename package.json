@@ -1,0 +1,45 @@
+{
+  "name": "fudosan-ontology",
+  "version": "0.1.0",
+  "description": "Open Japanese real-estate terminology & name-matching ontology with a zero-dependency, fully-local MCP server (377 terms / 10 domains / 2,400+ aliases).",
+  "bin": {
+    "fudosan-ontology": "bin/fudosan-ontology.js"
+  },
+  "files": [
+    "bin",
+    "src",
+    "data",
+    "README.md",
+    "README.en.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "type": "commonjs",
+  "license": "MIT",
+  "author": "Kotowari Inc.",
+  "keywords": [
+    "real-estate",
+    "ontology",
+    "japanese",
+    "mcp",
+    "model-context-protocol",
+    "nlp",
+    "entity-resolution",
+    "proptech",
+    "dictionary",
+    "real-estate-japan"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shoeiiwaya/fudosan-ontology.git"
+  },
+  "homepage": "https://github.com/shoeiiwaya/fudosan-ontology#readme",
+  "bugs": {
+    "url": "https://github.com/shoeiiwaya/fudosan-ontology/issues"
+  },
+  "scripts": {
+    "test": "node test/test_node.js"
+  }
+}

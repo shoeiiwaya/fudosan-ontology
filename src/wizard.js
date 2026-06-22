@@ -1,0 +1,142 @@
+"use strict";
+// 導入ウィザード: クライアントを選ぶ → MCP 設定を出力／書き込み。
+// ローカルLLM を選んだ場合は RAM を見て推奨モデルを提示（ゼロ依存・Node 標準のみ）。
+const os = require("os");
+const readline = require("readline");
+
+const MCP_JSON = {
+  mcpServers: {
+    "fudosan-ontology": { command: "npx", args: ["-y", "fudosan-ontology", "serve"] },
+  },
+};
+
+const CLIENTS = {
+  "claude-code": {
+    label: "Claude Code (CLI)",
+    how: () =>
+      "ターミナルで次を実行:\n\n  claude mcp add fudosan-ontology -- npx -y fudosan-ontology serve\n",
+  },
+  "claude-desktop": {
+    label: "Claude Desktop",
+    how: () => {
+      const p =
+        process.platform === "darwin"
+          ? "~/Library/Application Support/Claude/claude_desktop_config.json"
+          : process.platform === "win32"
+          ? "%APPDATA%\\Claude\\claude_desktop_config.json"
+          : "~/.config/Claude/claude_desktop_config.json";
+      return `設定ファイル ${p} の "mcpServers" に追記:\n\n${JSON.stringify(MCP_JSON, null, 2)}`;
+    },
+  },
+  codex: {
+    label: "OpenAI Codex CLI",
+    how: () =>
+      "~/.codex/config.toml に追記:\n\n" +
+      '[mcp_servers.fudosan-ontology]\ncommand = "npx"\nargs = ["-y", "fudosan-ontology", "serve"]\n',
+  },
+  cline: {
+    label: "Cline (VS Code)",
+    how: () =>
+      'Cline の MCP 設定 (cline_mcp_settings.json) の "mcpServers" に追記:\n\n' +
+      JSON.stringify(MCP_JSON, null, 2),
+  },
+  cursor: {
+    label: "Cursor",
+    how: () => `~/.cursor/mcp.json に追記:\n\n${JSON.stringify(MCP_JSON, null, 2)}`,
+  },
+  generic: {
+    label: "その他 / 汎用 MCP クライアント",
+    how: () =>
+      "MCP 設定の mcpServers に次を追記（多くのクライアントで共通）:\n\n" +
+      JSON.stringify(MCP_JSON, null, 2),
+  },
+  "local-llm": {
+    label: "ローカル LLM で使う（モデル推奨つき）",
+    how: () => localLlmGuide(),
+  },
+};
+
+function recommendModel() {
+  const gb = Math.round(os.totalmem() / 1024 ** 3);
+  let tier;
+  if (gb < 8) {
+    tier = {
+      warn: true,
+      models: ["Llama 3.2 3B (Q4)", "Qwen2.5 3B (Q4)", "Gemma 2 2B"],
+      note: "RAM が少なめ。3〜4B 級の量子化(Q4)を推奨。重いタスクは厳しい。",
+    };
+  } else if (gb < 16) {
+    tier = { models: ["Qwen2.5 7B (Q4)", "Llama 3.1 8B (Q4)", "Gemma 2 9B (Q4)"], note: "7〜8B 級(Q4)が快適。" };
+  } else if (gb < 32) {
+    tier = { models: ["Qwen2.5 14B (Q4)", "Phi-4 14B (Q4)", "Llama 3.1 8B (fp16)"], note: "13〜14B 級(Q4)まで実用的。" };
+  } else if (gb < 64) {
+    tier = { models: ["Qwen2.5 32B (Q4)", "Gemma 2 27B (Q4)"], note: "30B 級(Q4)が狙える。" };
+  } else {
+    tier = { models: ["Llama 3.3 70B (Q4)", "Qwen2.5 72B (Q4)"], note: "70B 級(Q4)も可。" };
+  }
+  return Object.assign({ ram_gb: gb }, tier);
+}
+
+function localLlmGuide() {
+  const r = recommendModel();
+  const lines = [];
+  lines.push(`検出した搭載メモリ: 約 ${r.ram_gb} GB`);
+  if (r.warn) lines.push("⚠️ メモリに余裕が少なめです。小さめモデル＋量子化を推奨します。");
+  lines.push("");
+  lines.push(`推奨モデル目安: ${r.models.join(" / ")}`);
+  lines.push(`  ${r.note}`);
+  lines.push("  日本語の不動産文には日本語が強いモデル(Qwen 系 / Sakana 系 / ELYZA 系)が好相性。");
+  lines.push("  ※ GPU 搭載機は VRAM 基準で。最新の入手可否は各ランナー(Ollama / LM Studio 等)で確認を。");
+  lines.push("");
+  lines.push("ローカル LLM ランナー側で本 MCP サーバ(`npx -y fudosan-ontology serve`)をツールとして登録すると、");
+  lines.push("選んだローカルモデルが不動産用語の名寄せを呼べます。設定形式は各ランナーの MCP 対応に従ってください。");
+  return lines.join("\n");
+}
+
+function printConfig(client) {
+  const c = CLIENTS[client];
+  if (!c) {
+    process.stdout.write(
+      `不明なクライアント: ${client}\n利用可能: ${Object.keys(CLIENTS).join(", ")}\n`
+    );
+    process.exitCode = 1;
+    return;
+  }
+  process.stdout.write(`\n# ${c.label}\n\n${c.how()}\n`);
+}
+
+function help() {
+  process.stdout.write(
+    [
+      "fudosan-ontology — 不動産 業界用語・名寄せオントロジー (MCP)",
+      "",
+      "使い方:",
+      "  npx -y fudosan-ontology serve     MCP サーバを起動 (クライアントが起動)",
+      "  npx -y fudosan-ontology init      導入ウィザード (クライアントを選んで設定)",
+      "  npx -y fudosan-ontology config <client>   指定クライアントの設定を表示",
+      "",
+      "  <client> = " + Object.keys(CLIENTS).join(" | "),
+      "",
+    ].join("\n")
+  );
+}
+
+function runWizard() {
+  const keys = Object.keys(CLIENTS);
+  const out = process.stdout;
+  out.write("\nfudosan-ontology 導入ウィザード\n使うツールを選んでください:\n\n");
+  keys.forEach((k, i) => out.write(`  ${i + 1}) ${CLIENTS[k].label}\n`));
+  out.write("\n番号を入力 (Enter で 1): ");
+
+  const rl = readline.createInterface({ input: process.stdin, output: process.stdout });
+  rl.once("line", (line) => {
+    const n = parseInt(String(line).trim(), 10);
+    const idx = Number.isInteger(n) && n >= 1 && n <= keys.length ? n - 1 : 0;
+    const key = keys[idx];
+    out.write(`\n# ${CLIENTS[key].label}\n\n${CLIENTS[key].how()}\n`);
+    out.write("\n設定後、クライアントを再起動すると fudosan-ontology が使えます。\n");
+    rl.close();
+  });
+}
+
+module.exports = { printConfig, runWizard, help, recommendModel, CLIENTS };

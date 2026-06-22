@@ -5,6 +5,14 @@ outputs/
 tmp/
 *.pyc
 
+# ビルド成果物（公開しない）
+dist/
+build/
+*.egg-info/
+node_modules/
+*.tgz
+*.whl
+
 # 内部 dev 成果物（公開しない）: ループ用ルーブリックと公開可否監査スクリプト
 criteria.md
 publish_audit.sh

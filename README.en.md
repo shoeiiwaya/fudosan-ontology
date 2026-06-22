@@ -34,12 +34,34 @@ name-matching dictionary for AI, OCR, and data integration. This makes it **one 
 
 ## Quick start
 
-### Try it in 30 seconds
+### Use from AI (MCP, no install)
+
+Add one line to your AI client's config. Works with Claude Code, Claude Desktop,
+OpenAI Codex, Cline, Cursor, and other MCP clients.
+
+**npx (Node)**
+```json
+{ "mcpServers": { "fudosan-ontology": { "command": "npx", "args": ["-y", "fudosan-ontology", "serve"] } } }
+```
+
+**uvx (Python)**
+```json
+{ "mcpServers": { "fudosan-ontology": { "command": "uvx", "args": ["fudosan-ontology", "serve"] } } }
+```
+
+Or run the setup wizard to pick a client and write the config (for local LLMs it inspects RAM and recommends a model):
+
+```bash
+npx -y fudosan-ontology init       # or: uvx fudosan-ontology init
+npx -y fudosan-ontology selftest   # smoke check
+```
+
+### Develop / run locally (clone)
 
 ```bash
 git clone https://github.com/shoeiiwaya/fudosan-ontology.git
 cd fudosan-ontology
-python3 ontology.py --selftest-gate
+python3 -m fudosan_ontology.ontology --selftest-gate
 ```
 
 Expected output:
@@ -53,7 +75,7 @@ Zero dependencies (Python 3 standard library only). No install, no network.
 ### Resolve a term (Python)
 
 ```python
-import ontology as O
+from fudosan_ontology import ontology as O
 onto = O.load_ontology()
 
 term = onto["alias_to_term"][O.norm_key("さんため")]
@@ -64,8 +86,8 @@ print(onto["term_to_entry"][term]["category"])   # => baibai
 ### Normalize free text (harness)
 
 ```bash
-python3 ontology.py --make-template     # generate an input template CSV
-python3 ontology.py sample_terms.csv    # process input CSV → artifacts in out/
+python3 -m fudosan_ontology.ontology --make-template     # generate an input template CSV
+python3 -m fudosan_ontology.ontology sample_terms.csv    # process input CSV → artifacts in out/
 ```
 
 ---
@@ -89,9 +111,10 @@ python3 ontology.py sample_terms.csv    # process input CSV → artifacts in out
 
 ### 🤖 MCP server (`mcp_server.py`)
 - `resolve_term` — term → canonical + definition + category + synonyms + english + statute
-- `normalize` — free text → standard tags / normalized values (same logic as the harness)
+- `normalize` — free text → standard tags / normalized values (same logic as the harness; **uvx build**)
 - `assess_risk` — address → disaster/hazard vocabulary (external risk API connection is a stub)
-- Newline-delimited JSON-RPC, standard library only, no network
+- Newline-delimited JSON-RPC, zero dependencies, no network
+- Distribution: **npx** (Node — `resolve_term` / `assess_risk`) and **uvx** (Python — all tools). `normalize` is coming to the npx build.
 
 ### 🛡️ Design promises
 - Never **asserts** law, permissibility, or money (uncertain → review / `null`)
@@ -120,14 +143,14 @@ Everything is Python standard library only, fully local, with no network access.
 ```json
 {
   "mcpServers": {
-    "fudosan-ontology": { "command": "python3", "args": ["/abs/path/to/fudosan-ontology/mcp_server.py"] }
+    "fudosan-ontology": { "command": "npx", "args": ["-y", "fudosan-ontology", "serve"] }
   }
 }
 ```
 
 ```bash
-python3 mcp_server.py     # connect to an MCP client over stdin/stdout
-python3 test_mcp.py       # verify real tool calls
+python3 -m fudosan_ontology.mcp_server   # start from a clone (stdin/stdout)
+python3 -m unittest discover -s tests    # all tests (harness + MCP)
 ```
 
 ---
@@ -145,7 +168,7 @@ python3 test_mcp.py       # verify real tool calls
 
 1. Add/edit entries in `domains/<key>.json`
 2. Run `python3 build.py` to merge and detect collisions
-3. Confirm `python3 ontology.py --selftest-gate` and `python3 test_ontology.py` are green
+3. Confirm `python3 -m fudosan_ontology.ontology --selftest-gate` and `python3 -m unittest discover -s tests` are green
 4. Open a Pull Request
 
 **Adding new synonyms and spelling variants grows the dictionary fastest.** Issues / PRs welcome.

@@ -16,9 +16,9 @@ ROOT = Path(__file__).resolve().parent
 class MCPClient:
     def __init__(self):
         self.p = subprocess.Popen(
-            [sys.executable, str(ROOT / "mcp_server.py")],
+            [sys.executable, "-m", "fudosan_ontology.mcp_server"],
             stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
-            cwd=str(ROOT),
+            cwd=str(ROOT.parent),
         )
         self._id = 0
 

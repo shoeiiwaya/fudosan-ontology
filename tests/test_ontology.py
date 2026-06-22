@@ -9,7 +9,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-import ontology as O
+from fudosan_ontology import ontology as O
 
 
 class TestAddressNormalize(unittest.TestCase):  # MT-301

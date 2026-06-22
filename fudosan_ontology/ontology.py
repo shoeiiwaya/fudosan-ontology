@@ -641,7 +641,7 @@ def write_csv(path, rows, columns):
 
 
 def write_outputs(state, out_dir=None):
-    out = Path(out_dir) if out_dir else ROOT / "out"
+    out = Path(out_dir) if out_dir else Path.cwd() / "out"
     out.mkdir(exist_ok=True)
     write_csv(out / "normalized_addresses.csv", state["addresses"], [
         ("行ID", "row_id"), ("正規化住所", "normalized"), ("住所種別", "address_type"),
