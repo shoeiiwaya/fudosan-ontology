@@ -112,10 +112,10 @@ python3 -m fudosan_ontology.ontology sample_terms.csv    # process input CSV →
 
 ### 🤖 MCP server (`mcp_server.py`)
 - `resolve_term` — term → canonical + definition + category + synonyms + english + statute
-- `normalize` — free text → standard tags / normalized values (same logic as the harness; **uvx build**)
+- `normalize` — free text → standard tags / normalized values (same logic as the harness)
 - `assess_risk` — address → disaster/hazard vocabulary (external risk API connection is a stub)
 - Newline-delimited JSON-RPC, zero dependencies, no network
-- Distribution: **npx** (Node — `resolve_term` / `assess_risk`) and **uvx** (Python — all tools). `normalize` is coming to the npx build.
+- Distribution: both **npx** (Node) and **uvx** (Python) expose all tools (`resolve_term` / `normalize` / `assess_risk`); outputs are verified identical by a Python↔JS parity test.
 
 ### 🛡️ Design promises
 - Never **asserts** law, permissibility, or money (uncertain → review / `null`)

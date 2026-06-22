@@ -70,6 +70,13 @@ class TestRequirementTags(unittest.TestCase):  # MT-006
         self.assertEqual(r["structured"]["walk_max_min"], 10)
         self.assertEqual(r["structured"]["area_min_raw"], "40㎡")
 
+    def test_layout_in_natural_sentence(self):
+        # ドッグフード発見: 自然文「2LDKを探す」(助詞が続く)でも間取りを取りこぼさない
+        for txt in ("中野区で2LDKを探してます", "3LDKがいい", "1Kでも可", "2SLDK希望です"):
+            r = O.tag_requirements(txt)
+            self.assertTrue(any(t.startswith("間取り:") for t in r["tags"]), f"間取り取りこぼし: {txt}")
+        self.assertEqual(O.tag_requirements("2LDKを探す")["structured"]["layout"], "2LDK")
+
     def test_facility_tags(self):
         r = O.tag_requirements("バス・トイレ別 オートロック 宅配ボックス ペット相談可 南向き 独立洗面台")
         for t in ("バス・トイレ別", "オートロック", "宅配ボックス", "ペット可", "南向き", "独立洗面台"):

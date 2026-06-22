@@ -31,7 +31,16 @@ ok("assess hazard_vocabulary に ハザードマップ", a.hazard_vocabulary.len
 const init = handle({ jsonrpc: "2.0", id: 1, method: "initialize", params: {} });
 ok("initialize serverInfo.name=fudosan-ontology", init.result.serverInfo.name === "fudosan-ontology");
 const list = handle({ jsonrpc: "2.0", id: 2, method: "tools/list" });
-ok("tools/list = resolve_term+assess_risk", list.result.tools.map((t) => t.name).sort().join(",") === "assess_risk,resolve_term");
+ok("tools/list = resolve_term+normalize+assess_risk", list.result.tools.map((t) => t.name).sort().join(",") === "assess_risk,normalize,resolve_term");
+
+// normalize（自然文の間取り取りこぼし回帰も兼ねる）
+const nz = handle({ jsonrpc: "2.0", id: 9, method: "tools/call", params: { name: "normalize", arguments: { kind: "requirement", text: "中野区で2LDKを探してます、家賃15万円以内" } } });
+const nzp = JSON.parse(nz.result.content[0].text);
+const st = JSON.parse(nzp.requirements[0].structured);
+ok("normalize 自然文の間取り抽出 2LDK", st.layout === "2LDK");
+ok("normalize 賃料 150000", st.rent_max_yen === 150000);
+const addrN = handle({ jsonrpc: "2.0", id: 10, method: "tools/call", params: { name: "normalize", arguments: { kind: "address", text: "中野区中央三丁目12番5号" } } });
+ok("normalize 住所正規化", JSON.parse(addrN.result.content[0].text).addresses[0].normalized === "中野区中央3-12-5");
 const call = handle({ jsonrpc: "2.0", id: 3, method: "tools/call", params: { name: "resolve_term", arguments: { term: "レインズ" } } });
 const payload = JSON.parse(call.result.content[0].text);
 ok("tools/call resolve_term レインズ", payload.matched && payload.term === "レインズ");

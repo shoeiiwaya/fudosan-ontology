@@ -3,6 +3,7 @@
 // MCP 標準の stdio transport = 改行区切り JSON（1メッセージ1行）。
 const readline = require("readline");
 const { resolveTerm, assessRisk } = require("./resolve");
+const { process: runProcess, KINDS } = require("./normalize");
 
 const PROTOCOL_VERSION = "2024-11-05";
 const SERVER_INFO = { name: "fudosan-ontology", version: "0.1.0" };
@@ -30,10 +31,39 @@ const TOOLS = [
       additionalProperties: false,
     },
   },
+  {
+    name: "normalize",
+    description:
+      "現場の自由文（住所/希望条件/物件文/広告文/用語）を標準タグ・正規化値に落とす。ハーネスと同一ロジック。",
+    inputSchema: {
+      type: "object",
+      properties: {
+        kind: { type: "string", enum: ["address", "requirement", "property", "advert", "term"], description: "入力種別" },
+        text: { type: "string", description: "自由文" },
+      },
+      required: ["kind", "text"],
+      additionalProperties: false,
+    },
+  },
 ];
+
+function normalizeTool(a) {
+  const kind = String(a.kind || "").trim();
+  const text = String(a.text != null ? a.text : "").trim();
+  if (!KINDS.has(kind)) throw new Error(`kind は ${[...KINDS].join(", ")} のいずれかです`);
+  if (!text) throw new Error("text が必要です");
+  const st = runProcess([{ row_id: "MCP-001", kind, text, memo: "" }]);
+  return {
+    tool: "normalize", kind, input: text,
+    addresses: st.addresses, requirements: st.requirements, conditions: st.conditions,
+    attrs: st.attrs, new_term_proposals: st.proposals, holds: st.holds,
+    gates: st.audit.map((e) => e.gate_status),
+  };
+}
 
 const HANDLERS = {
   resolve_term: (a) => resolveTerm(a.term != null ? a.term : a.text),
+  normalize: normalizeTool,
   assess_risk: (a) => assessRisk(a.address != null ? a.address : a.text),
 };
 
