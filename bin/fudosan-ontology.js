@@ -10,6 +10,8 @@ if (arg === "serve") {
   require("../src/wizard").runWizard();
 } else if (arg === "config") {
   require("../src/wizard").printConfig(process.argv[3]);
+} else if (arg === "install") {
+  process.exitCode = require("../src/wizard").installClient(process.argv[3]) || 0;
 } else if (arg === "selftest") {
   const { resolveTerm, meta } = require("../src/resolve");
   const r = resolveTerm("マイソク");

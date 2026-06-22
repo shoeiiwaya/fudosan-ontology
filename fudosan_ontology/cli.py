@@ -15,6 +15,8 @@ def main(argv=None):
         return wizard.run_wizard()
     if arg == "config":
         return wizard.print_config(argv[1] if len(argv) > 1 else None)
+    if arg == "install":
+        return wizard.install_client(argv[1] if len(argv) > 1 else None)
     if arg == "selftest":
         from . import ontology
         return ontology.main(["--selftest-gate"])

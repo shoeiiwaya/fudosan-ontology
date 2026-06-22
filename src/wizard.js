@@ -2,13 +2,68 @@
 // 導入ウィザード: クライアントを選ぶ → MCP 設定を出力／書き込み。
 // ローカルLLM を選んだ場合は RAM を見て推奨モデルを提示（ゼロ依存・Node 標準のみ）。
 const os = require("os");
+const fs = require("fs");
+const path = require("path");
 const readline = require("readline");
+const { spawnSync } = require("child_process");
 
-const MCP_JSON = {
-  mcpServers: {
-    "fudosan-ontology": { command: "npx", args: ["-y", "fudosan-ontology", "serve"] },
-  },
-};
+const SERVER_ENTRY = { command: "npx", args: ["-y", "fudosan-ontology", "serve"] };
+const MCP_JSON = { mcpServers: { "fudosan-ontology": SERVER_ENTRY } };
+
+// 設定ファイルにマージ書き込みするクライアント（ファイルパスを返す）
+function clientConfigPath(client) {
+  const home = os.homedir();
+  if (client === "claude-desktop") {
+    if (process.platform === "darwin") return path.join(home, "Library", "Application Support", "Claude", "claude_desktop_config.json");
+    if (process.platform === "win32") return path.join(process.env.APPDATA || path.join(home, "AppData", "Roaming"), "Claude", "claude_desktop_config.json");
+    return path.join(home, ".config", "Claude", "claude_desktop_config.json");
+  }
+  if (client === "cursor") return path.join(home, ".cursor", "mcp.json");
+  return null;
+}
+
+// 既存の mcpServers と他キーを保全したままマージ。書き込み前にバックアップ。
+function mergeMcpFile(file) {
+  let cfg = {};
+  let backedUp = null;
+  if (fs.existsSync(file)) {
+    try { cfg = JSON.parse(fs.readFileSync(file, "utf8")) || {}; } catch (e) { cfg = {}; }
+    backedUp = `${file}.bak-${new Date().toISOString().replace(/[:.]/g, "-")}`;
+    fs.copyFileSync(file, backedUp);
+  } else {
+    fs.mkdirSync(path.dirname(file), { recursive: true });
+  }
+  if (!cfg.mcpServers || typeof cfg.mcpServers !== "object") cfg.mcpServers = {};
+  cfg.mcpServers["fudosan-ontology"] = SERVER_ENTRY;
+  fs.writeFileSync(file, JSON.stringify(cfg, null, 2) + "\n");
+  return { file, backedUp };
+}
+
+// クライアントへ自動導入。claude-code は CLI、desktop/cursor はファイルマージ、他は手順表示。
+function installClient(client) {
+  const out = process.stdout;
+  if (client === "claude-code") {
+    const r = spawnSync("claude", ["mcp", "add", "-s", "user", "fudosan-ontology", "--", "npx", "-y", "fudosan-ontology", "serve"], { encoding: "utf8" });
+    if (r.status === 0) { out.write("✓ Claude Code に登録しました。新しいセッションで有効になります。\n"); return 0; }
+    out.write("Claude Code CLI が見つかりませんでした。次を実行してください:\n\n  claude mcp add -s user fudosan-ontology -- npx -y fudosan-ontology serve\n");
+    return 1;
+  }
+  const file = clientConfigPath(client);
+  if (file) {
+    try {
+      const r = mergeMcpFile(file);
+      out.write(`✓ 設定を書き込みました: ${r.file}\n`);
+      if (r.backedUp) out.write(`  （元の設定は ${r.backedUp} にバックアップ）\n`);
+      out.write("  クライアントを再起動すると fudosan-ontology が使えます。\n");
+      return 0;
+    } catch (e) {
+      out.write(`自動書き込みに失敗: ${e.message}\n\n手動設定:\n${(CLIENTS[client] || {}).how ? CLIENTS[client].how() : ""}\n`);
+      return 1;
+    }
+  }
+  out.write(`${(CLIENTS[client] || {}).how ? CLIENTS[client].how() : `不明なクライアント: ${client}`}\n`);
+  return 0;
+}
 
 const CLIENTS = {
   "claude-code": {
@@ -113,6 +168,7 @@ function help() {
       "使い方:",
       "  npx -y fudosan-ontology serve     MCP サーバを起動 (クライアントが起動)",
       "  npx -y fudosan-ontology init      導入ウィザード (クライアントを選んで設定)",
+      "  npx -y fudosan-ontology install <client>  指定クライアントへ設定を自動書き込み",
       "  npx -y fudosan-ontology config <client>   指定クライアントの設定を表示",
       "",
       "  <client> = " + Object.keys(CLIENTS).join(" | "),
@@ -133,10 +189,20 @@ function runWizard() {
     const n = parseInt(String(line).trim(), 10);
     const idx = Number.isInteger(n) && n >= 1 && n <= keys.length ? n - 1 : 0;
     const key = keys[idx];
-    out.write(`\n# ${CLIENTS[key].label}\n\n${CLIENTS[key].how()}\n`);
-    out.write("\n設定後、クライアントを再起動すると fudosan-ontology が使えます。\n");
-    rl.close();
+    const canWrite = key === "claude-desktop" || key === "cursor" || key === "claude-code";
+    if (!canWrite) {
+      out.write(`\n# ${CLIENTS[key].label}\n\n${CLIENTS[key].how()}\n`);
+      rl.close();
+      return;
+    }
+    out.write(`\n# ${CLIENTS[key].label}\n設定を自動で書き込みますか？（バックアップを取ってから追記します） (Y/n): `);
+    rl.once("line", (ans) => {
+      out.write("\n");
+      if (/^n/i.test(String(ans).trim())) out.write(`${CLIENTS[key].how()}\n`);
+      else installClient(key);
+      rl.close();
+    });
   });
 }
 
-module.exports = { printConfig, runWizard, help, recommendModel, CLIENTS };
+module.exports = { printConfig, runWizard, help, recommendModel, installClient, clientConfigPath, mergeMcpFile, CLIENTS };

@@ -2,7 +2,7 @@
 
 # fudosan-ontology
 
-> ### ▶️ **[30 秒で試す](#クイックスタート)** ・ [辞書を引く](ontology.md) 👈
+> ### 🚀 **[はじめかた（5分・初めての方）](GETTING_STARTED.md)** ・ [30秒で試す](#クイックスタート) ・ [辞書を引く](ontology.md)
 
 不動産（宅建業）の現場テキスト — 物確メモ・反響・広告文・OCR データ — を、
 AI が**業者語のまま読んで標準形に整える**オープンな**業務効率化ツール**。
@@ -154,6 +154,7 @@ node test/test_node.js                   # Node 版 MCP のテスト
 
 ## ドキュメント
 
+- [GETTING_STARTED.md](GETTING_STARTED.md) — **初めての方向けの導入ガイド（5分）**
 - [SPEC.md](SPEC.md) — ハーネス仕様・capability 対応表・ゲート定義
 - [docs/RISK_BRIDGE.md](docs/RISK_BRIDGE.md) — 災害/ハザード語彙を外部リスク評価 API に橋渡しする接続仕様
 - [docs/verification-log.md](docs/verification-log.md) — 法令出典・換算定数の確証記録

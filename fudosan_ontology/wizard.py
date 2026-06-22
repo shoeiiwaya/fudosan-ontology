@@ -2,7 +2,9 @@
 ローカル LLM 選択時は搭載メモリを見て推奨モデルを提示する（標準ライブラリのみ）。"""
 import json
 import os
+import shutil
 import sys
+from datetime import datetime
 
 MCP_SNIPPET = {
     "mcpServers": {
@@ -84,6 +86,69 @@ CLIENTS = {
 }
 
 
+def client_config_path(client):
+    home = os.path.expanduser("~")
+    if client == "claude-desktop":
+        if sys.platform == "darwin":
+            return os.path.join(home, "Library", "Application Support", "Claude", "claude_desktop_config.json")
+        if sys.platform == "win32":
+            return os.path.join(os.environ.get("APPDATA", os.path.join(home, "AppData", "Roaming")), "Claude", "claude_desktop_config.json")
+        return os.path.join(home, ".config", "Claude", "claude_desktop_config.json")
+    if client == "cursor":
+        return os.path.join(home, ".cursor", "mcp.json")
+    return None
+
+
+def merge_mcp_file(file):
+    """既存 mcpServers と他キーを保全したままマージ。書き込み前にバックアップ。"""
+    cfg, backed = {}, None
+    if os.path.exists(file):
+        try:
+            cfg = json.load(open(file, encoding="utf-8")) or {}
+        except Exception:
+            cfg = {}
+        backed = file + ".bak-" + datetime.now().strftime("%Y%m%dT%H%M%S")
+        shutil.copyfile(file, backed)
+    else:
+        os.makedirs(os.path.dirname(file), exist_ok=True)
+    if not isinstance(cfg.get("mcpServers"), dict):
+        cfg["mcpServers"] = {}
+    cfg["mcpServers"]["fudosan-ontology"] = {"command": "uvx", "args": ["fudosan-ontology", "serve"]}
+    with open(file, "w", encoding="utf-8") as f:
+        json.dump(cfg, f, ensure_ascii=False, indent=2)
+        f.write("\n")
+    return file, backed
+
+
+def install_client(client):
+    if client == "claude-code":
+        import subprocess
+        try:
+            r = subprocess.run(["claude", "mcp", "add", "-s", "user", "fudosan-ontology", "--", "uvx", "fudosan-ontology", "serve"])
+            if r.returncode == 0:
+                sys.stdout.write("✓ Claude Code に登録しました。新しいセッションで有効になります。\n")
+                return 0
+        except FileNotFoundError:
+            pass
+        sys.stdout.write("Claude Code CLI が見つかりません。次を実行:\n\n  claude mcp add -s user fudosan-ontology -- uvx fudosan-ontology serve\n")
+        return 1
+    file = client_config_path(client)
+    if file:
+        try:
+            f, backed = merge_mcp_file(file)
+            sys.stdout.write(f"✓ 設定を書き込みました: {f}\n")
+            if backed:
+                sys.stdout.write(f"  （元の設定は {backed} にバックアップ）\n")
+            sys.stdout.write("  クライアントを再起動すると fudosan-ontology が使えます。\n")
+            return 0
+        except Exception as e:
+            sys.stdout.write(f"自動書き込みに失敗: {e}\n")
+            return 1
+    c = CLIENTS.get(client)
+    sys.stdout.write((c[1]() if c else f"不明なクライアント: {client}") + "\n")
+    return 0
+
+
 def print_config(client):
     c = CLIENTS.get(client)
     if not c:
@@ -99,6 +164,7 @@ def help():
         "使い方:\n"
         "  uvx fudosan-ontology serve     MCP サーバを起動 (クライアントが起動)\n"
         "  uvx fudosan-ontology init      導入ウィザード (クライアントを選んで設定)\n"
+        "  uvx fudosan-ontology install <client>  指定クライアントへ設定を自動書き込み\n"
         "  uvx fudosan-ontology config <client>   指定クライアントの設定を表示\n\n"
         "  <client> = " + " | ".join(CLIENTS) + "\n"
     )
@@ -119,6 +185,15 @@ def run_wizard():
     except ValueError:
         idx = 0
     key = keys[idx]
-    sys.stdout.write(f"\n# {CLIENTS[key][0]}\n\n{CLIENTS[key][1]()}\n")
-    sys.stdout.write("\n設定後、クライアントを再起動すると fudosan-ontology が使えます。\n")
+    if key in ("claude-desktop", "cursor", "claude-code"):
+        sys.stdout.write(f"\n# {CLIENTS[key][0]}\n設定を自動で書き込みますか？（バックアップを取って追記） (Y/n): ")
+        sys.stdout.flush()
+        ans = sys.stdin.readline().strip()
+        sys.stdout.write("\n")
+        if ans[:1].lower() == "n":
+            sys.stdout.write(f"{CLIENTS[key][1]()}\n")
+        else:
+            install_client(key)
+    else:
+        sys.stdout.write(f"\n# {CLIENTS[key][0]}\n\n{CLIENTS[key][1]()}\n")
     return 0
