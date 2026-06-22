@@ -5,7 +5,7 @@ build-backend = "hatchling.build"
 [project]
 name = "fudosan-ontology"
 version = "0.1.0"
-description = "Standardize messy Japanese real-estate text (addresses, listings, inquiries) with AI — an open, zero-dependency workflow tool with a 377-term name-matching dictionary and a local MCP server."
+description = "Standardize messy Japanese real-estate text (addresses, listings, inquiries) with AI — an open, zero-dependency workflow tool with a 382-term name-matching dictionary and a local MCP server."
 readme = "README.md"
 requires-python = ">=3.9"
 license = { text = "MIT" }

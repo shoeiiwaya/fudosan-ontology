@@ -7,7 +7,7 @@
 An open **workflow tool** that lets AI read messy Japanese real-estate text — property notes,
 inquiries, listing copy, OCR data — **in the trade's own jargon and normalize it**. It resolves
 spelling variants, abbreviations, and inconsistent addresses / areas / build-years. Ships a
-built-in **377-term dictionary** and a local **MCP server** so AI (e.g. Claude) can call it directly.
+built-in **382-term dictionary** and a local **MCP server** so AI (e.g. Claude) can call it directly.
 
 **v1** · MIT License · Python 3 standard library only · **No network access (fully local)**
 
@@ -96,7 +96,7 @@ python3 -m fudosan_ontology.ontology sample_terms.csv    # process input CSV →
 ## Features
 
 ### 📖 Dictionary (`ontology.json`)
-- **377 terms / 10 domains** — sales, leasing, listing/ads, registry, due diligence, contracts,
+- **382 terms / 10 domains** — sales, leasing, listing/ads, registry, due diligence, contracts,
   investment, ryokan/lodging, finance, field slang
 - **2,400+ aliases** — kanji/kana/romaji, full/half-width, okurigana, abbreviations → canonical form
 - **Bilingual** — pro definition `definition_pro` / plain definition `definition_plain` / `english`
@@ -130,7 +130,7 @@ python3 -m fudosan_ontology.ontology sample_terms.csv    # process input CSV →
 field free text ──▶ [ ontology.py harness ] ──▶ standard tags / normalized values / audit log
                             ▲
                     [ ontology.json dictionary ]
-                    377 terms / 2,400+ aliases / 10 domains
+                    382 terms / 2,400+ aliases / 10 domains
                             ▲
               [ mcp_server.py ]  ⇄  Claude and other AI / MCP clients
 ```
