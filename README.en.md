@@ -2,33 +2,34 @@
 
 # fudosan-ontology
 
-> ### ▶️ **[Browse the 377-term dictionary](ontology.md)** 👈
+> ### ▶️ **[Try it in 30 seconds](#quick-start)** · [browse the dictionary](ontology.md) 👈
 
-An open vocabulary dictionary that resolves the **industry terms, spelling variants, and
-abbreviations** of Japanese real estate (the licensed brokerage trade) into a
-machine-usable canonical form. **377 terms / 10 domains / 2,400+ aliases.**
-Ships with an **MCP server** so AI can query it in natural language.
+An open **workflow tool** that lets AI read messy Japanese real-estate text — property notes,
+inquiries, listing copy, OCR data — **in the trade's own jargon and normalize it**. It resolves
+spelling variants, abbreviations, and inconsistent addresses / areas / build-years. Ships a
+built-in **377-term dictionary** and a local **MCP server** so AI (e.g. Claude) can call it directly.
 
 **v1** · MIT License · Python 3 standard library only · **No network access (fully local)**
 
 ---
 
-## Why fudosan-ontology?
+## Manual work it removes
 
 In Japanese real estate, the same concept is written differently by every company, portal,
 and agent (`マイソク` / `物件概要書` / `販売図面`; `さんため` / `三為`; `築15年` / `平成23年築`).
-Because no standardized shared vocabulary exists as a public good, every team rebuilds its own
-name-matching dictionary for AI, OCR, and data integration. This makes it **one open dictionary**.
+The clean-up, logging, and term-lookup people used to do by hand is handled by the built-in
+dictionary and the normalization harness.
 
-| | Roll your own | Closed in-house dict | **fudosan-ontology** |
-|---|:---:|:---:|:---:|
-| 377 terms / 10 domains | each time | scattered | **✅** |
-| Alias / variant resolution | DIY | internal only | **✅ 2,400+ aliases** |
-| Callable from AI (MCP) | ❌ | ❌ | **✅ included** |
-| Self-host · PII stays local | – | – | **✅ no network** |
-| Statute references | each time | unknown | **✅ reference pointers** |
-| Cost | engineering | license fees | **¥0** |
-| Source code | – | closed | **MIT (this repo)** |
+| Manual work | With fudosan-ontology |
+|---|---|
+| Fixing spelling variants in property notes by hand | Auto-normalize address / area / build-year / direction |
+| Logging inquiry requirements by hand | Auto-tag rent / layout / area / amenities |
+| Pulling conditions out of listing copy | Pets / instruments / minpaku → condition tags (permissibility → review) |
+| Jargon like "マイソク" / "三為" new hires don't know | Term → canonical + plain definition, instantly |
+| Name-matching messy OCR / CSV | Resolve to canonical via **2,400+ aliases** |
+| AI doesn't understand the trade's jargon | Hand the dictionary + normalization to AI over **MCP** |
+
+All **fully local, no network, MIT** — your data never leaves the machine.
 
 ---
 

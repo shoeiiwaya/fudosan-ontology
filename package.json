@@ -1,7 +1,7 @@
 {
   "name": "fudosan-ontology",
   "version": "0.1.0",
-  "description": "Open Japanese real-estate terminology & name-matching ontology with a zero-dependency, fully-local MCP server (377 terms / 10 domains / 2,400+ aliases).",
+  "description": "Standardize messy Japanese real-estate text (addresses, listings, inquiries) with AI — an open, zero-dependency workflow tool with a 377-term name-matching dictionary and a local MCP server.",
   "bin": {
     "fudosan-ontology": "bin/fudosan-ontology.js"
   },
